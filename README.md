@@ -6,7 +6,8 @@
  The programs are compiled using `make`
 
 > The only way to learn a new programming language is by writing programs in it.
->						*-Dennis Ritchie*
+>
+>						            *-Dennis Ritchie*
 
 
- ![C] (./C.png)
+![C](/C.png)
