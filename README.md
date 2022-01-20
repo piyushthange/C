@@ -4,9 +4,9 @@
  I'll be scripting down my experience with the book as well as the 
  programs in it.
 
- The programs are compiled using `make` and executables can be found 
- in `.gitignore` dir.
-
+ The programs can be compiled using `gcc -o <output_exec_name> <file_name.c>`
+ as well as using `make <file_name_only>`. `make` will produce an executable as 
+ filename.
 >
 >        The only way to learn a new programming language is by writing programs in it.
 >
