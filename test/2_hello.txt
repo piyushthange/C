@@ -1,0 +1,5 @@
+hello world 
+I'm opening the file
+and reading the contents of it
+and closing it
+
