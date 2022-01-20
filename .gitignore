@@ -1,6 +1,7 @@
 Chapter-1/*
-CS50/*
-*
+test/*
 !*.c
-!*.h
+!*/*.c
+!*/*.h
+!*/*.txt
 !README.md
