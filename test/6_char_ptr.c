@@ -7,6 +7,13 @@ int main(int argc, char *agrv[]){
 
 	printf("str array = %s\n", str);
 	printf("pointer char = %s\n", ptr);
+	
+	/* if we increment the ptr by 1 it'll print from the next char */
+	ptr++;
+	printf("pointer incremented %s\n", ptr);
 
+	/* if we increment the str it will throw error */
+	str++;
+	printf("Stirng incremented %s\n", str);
 	return 0;
 }
