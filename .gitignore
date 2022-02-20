@@ -1,5 +1,7 @@
 Chapter-1/*
 test/*
+pwn/*
+!pwn/*.c
 !*.c
 !*/*.c
 !*/*.h
