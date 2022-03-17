@@ -9,7 +9,7 @@ MODULE_VERSION("0.1");
 
 static int __init hello_init(void)
 {
-	pirntk(KERN_INFO "Hello, World!!\n");
+	printk(KERN_INFO "Hello, World!!\n");
 	return 0; /* succes */
 }
 
@@ -19,4 +19,4 @@ static void __exit hello_exit(void)
 }
 
 module_init(hello_init);
-module_init(hello_eixt);
+module_exit(hello_exit);
