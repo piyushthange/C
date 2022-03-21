@@ -2,6 +2,11 @@ Chapter-1/*
 test/*
 pwn/*
 YT/*
+ds-algo/*
+kernel-programming/*
+
+!kernel-programming/*.c
+!ds-algo/*.c
 !YT/*.c
 !pwn/*.c
 !*.c
