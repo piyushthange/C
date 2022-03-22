@@ -13,11 +13,18 @@ int main(int argc, char *argv[])
 	scanf("%d", &num);
 
 	node *head = (struct node *)malloc(sizeof(node));
-	int n_size = sizeof(node);
-	int i = 20;
-	int *ptr = &i;
-	printf("ptr size %ld\n", sizeof(ptr));
-	printf("Node size: %d\n", n_size);
+	node *c = (struct node *)malloc(sizeof(node));
+	//for(int i = 0; i < num; i++){
+		printf("Enter data: ");
+		scanf("%d", &head->data);
+		head->next = NULL;
+		node *p = head;
+		while(p->next == NULL){
+			p = p->next;
+		}
+		
+	//}
+	printf("head->next %d\n", head->data);
 
 	return 0;
 }
