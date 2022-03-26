@@ -30,5 +30,4 @@ int main(int argc, char *argv[])
 	free(ptr);
 	ptr = NULL;
 	return 0;
-	
 }
