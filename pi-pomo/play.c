@@ -1,3 +1,7 @@
+/* The command used to compile is as follows
+ * 	gcc -o p play.c -lao -lmpg123
+ *	./p <name of audio.mp3>
+ */
 #include <ao/ao.h>
 #include <mpg123.h>
 
