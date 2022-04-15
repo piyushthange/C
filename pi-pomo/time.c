@@ -8,7 +8,8 @@ int main()
 	long int s;
 	while(1){
 		s = time(block);
-		printf("%ld\n", s);
+		printf("\rThe time is %ld", s);
+		fflush(stdout);
 		sleep(1);
 	}
 
