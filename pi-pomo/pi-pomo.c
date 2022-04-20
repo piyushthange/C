@@ -103,79 +103,74 @@ int main(int argc, char *argv[])
 	/* ----------------------exit-end---------------*/
 
 	keypad(stdscr, true);
-	keypad(start, true);
-	keypad(stop, true);
-	keypad(br, true);
-	keypad(reset, true);
-	keypad(end, true);
+//	keypad(start, true);
+//	keypad(stop, true);
+//	keypad(br, true);
+//	keypad(reset, true);
+//	keypad(end, true);
 
 	//char **choices[4] = {start, stop, br, reset, end};
 	int choice;
 	int hl = 0;
 
 	while(1){
-		for (int i = 0; i < 2; i++){
+		for (int i = 0; i < 5; i++){
 			if(i == hl){
 				wattron(start, A_REVERSE);
 				mvwprintw(start,1,2, "Start");
+				wattroff(stop, A_REVERSE);
+				wattroff(reset, A_REVERSE);
+				wattroff(br, A_REVERSE);
+				wattroff(end, A_REVERSE);
 				wrefresh(start);
-				wattroff(start, A_REVERSE);
-				wattroff(stop, A_REVERSE);
-				wattroff(reset, A_REVERSE);
-				wattroff(br, A_REVERSE);
-				wattroff(end, A_REVERSE);
-				refresh();
+				break;
 			}
-			else if( i == hl+1){
-				keypad(stop, true);
+			wattroff(start, A_REVERSE);
+			if(i == hl+1){
 				wattron(stop, A_REVERSE);
-				mvwprintw(stop,1,2, "Stop");
-				wrefresh(stop);
-				wattroff(start, A_REVERSE);
-				wattroff(stop, A_REVERSE);
-				wattroff(reset, A_REVERSE);
-				wattroff(br, A_REVERSE);
-				wattroff(end, A_REVERSE);
-				refresh();
+			wattroff(start, A_REVERSE);
+			mvwprintw(stop,1,2, "Stop");
+			wattroff(stop, A_REVERSE);
+			wrefresh(stop);
+			break;
 			}
-//			else if( i == hl+2){
-//				keypad(reset, true);
-//				wattron(reset, A_REVERSE);
-//				mvwprintw(reset,1,2, "Reset");
-//				wrefresh(reset);
-//				wattroff(start, A_REVERSE);
-//				wattroff(stop, A_REVERSE);
-//				wattroff(reset, A_REVERSE);
-//				wattroff(br, A_REVERSE);
-//				wattroff(end, A_REVERSE);
-//				refresh();
-//			}
-//			else if( i == hl+3){
-//				keypad(br, true);
-//				wattron(br, A_REVERSE);
-//				mvwprintw(br,1,2, "Break");
-//				wrefresh(br);
-//				wattroff(start, A_REVERSE);
-//				wattroff(stop, A_REVERSE);
-//				wattroff(reset, A_REVERSE);
-//				wattroff(br, A_REVERSE);
-//				wattroff(end, A_REVERSE);
-//				refresh();
-//			}
-//			else if( i == hl+4){
-//				keypad(end, true);
-//				wattron(end, A_REVERSE);
-//				mvwprintw(end,1,2, "Exit");
-//				wrefresh(end);
-//				wattroff(start, A_REVERSE);
-//				wattroff(stop, A_REVERSE);
-//				wattroff(reset, A_REVERSE);
-//				wattroff(br, A_REVERSE);
-//				wattroff(end, A_REVERSE);
-//				refresh();
-//			}
+			if( i == hl+2){
+				wattron(reset, A_REVERSE);
+			mvwprintw(reset,1,2, "Reset");
+			wrefresh(reset);
+			wattroff(start, A_REVERSE);
+			wattroff(stop, A_REVERSE);
+			wattroff(reset, A_REVERSE);
+			wattroff(br, A_REVERSE);
+			wattroff(end, A_REVERSE);
+			break;
+			}
+			if( i == hl+3){
+				wattron(br, A_REVERSE);
+			mvwprintw(br,1,2, "Break");
+			wrefresh(br);
+			wattroff(start, A_REVERSE);
+			wattroff(stop, A_REVERSE);
+			wattroff(reset, A_REVERSE);
+			wattroff(br, A_REVERSE);
+			wattroff(end, A_REVERSE);
+			refresh();
+			break;
+			}
+			if( i == hl+4){
+				wattron(end, A_REVERSE);
+			mvwprintw(end,1,2, "Exit");
+			wrefresh(end);
+			wattroff(start, A_REVERSE);
+			wattroff(stop, A_REVERSE);
+			wattroff(reset, A_REVERSE);
+			wattroff(br, A_REVERSE);
+			wattroff(end, A_REVERSE);
+			refresh();
+			break;
+			}
 		}
-		choice = wgetch(start);
+		choice = getch();
 		switch(choice){
 		case KEY_LEFT:
 			hl--;
@@ -190,7 +185,6 @@ int main(int argc, char *argv[])
 		default:
 			break;
 		}
-
 	}
 	int k = getch();
 
