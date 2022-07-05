@@ -10,5 +10,6 @@ int main(){
 	while((char)a != EOF){
 		fwrite(f, BUFF, sizeof(BUFF));
 	}
+	/* just checking out */
 	
 }
