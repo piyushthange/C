@@ -5,11 +5,12 @@
 
 void prMatrix(int arr[R][C], int m, int n);
 void EnterMatrix(int arr[R][C], int m, int n);
-int rowSum(int arr[R][C], int k, int n);
+int rowSum(int arr[R][C], int k, int c);
+int colSum(int arr[R][C], int k, int r);
 
 int main(int argc, char *argv[]) {
 	
-	int a[R][C], m, n, rs=0;
+	int a[R][C], m, n, rs=0, cs=0;
 
 	printf("Enter value m & n: ");
 	scanf("%d %d", &m, &n);
@@ -22,14 +23,29 @@ int main(int argc, char *argv[]) {
 		printf("Sum of row %d : %d\n", i+1, rs);
 	}
 
+	for (int i = 0; i < n; i++) {
+		cs = colSum(a, i, m);
+		printf("Sum of column %d : %d\n", i+1, cs);
+	}
+
 
 	return 0;
 }
 
-int rowSum(int arr[R][C], int k, int n) {
+int colSum(int arr[R][C], int k, int r) {
+	int rs = 0, i;
+
+	for (i = 0; i < r; i++)
+		rs = rs + arr[i][k];
+
+	return rs;
+}
+
+
+int rowSum(int arr[R][C], int k, int c) {
 	int rS = 0, i;
 	
-	for (i = 0; i < n; i++)
+	for (i = 0; i < c; i++)
 		rS = rS + arr[k][i];
 	
 	return rS;
