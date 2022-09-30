@@ -1,0 +1,2 @@
+/home/prof/GitHub/C/cmake_test/build/CMakeFiles/edit_cache.dir
+/home/prof/GitHub/C/cmake_test/build/CMakeFiles/rebuild_cache.dir
