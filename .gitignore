@@ -14,3 +14,6 @@ kernel-programming/*
 !*/*.h
 !*/*.txt
 !README.md
+C_pros/a.out
+
+cmake_test/build/*
