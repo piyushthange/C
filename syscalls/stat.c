@@ -14,6 +14,10 @@ int main()
 
 	int ino = buff.st_ino;
 	int uid = a->st_uid;
+	int *p = NULL;
+	int d = 293;
+	p = &d;
+	printf("%p\n",(void *)p);
 	printf("inode : %d\n", ino);
 	printf("uid : %d\n", uid);
 	printf("link : %ld\n", a->st_nlink);
