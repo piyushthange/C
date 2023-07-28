@@ -5,6 +5,10 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+strict n {
+ int a;
+}
+
 int main()
 {
 	struct stat buff;
@@ -17,6 +21,7 @@ int main()
 	int *p = NULL;
 	int d = 293;
 	p = &d;
+ 
 	printf("%p\n",(void *)p);
 	printf("inode : %d\n", ino);
 	printf("uid : %d\n", uid);
