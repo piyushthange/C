@@ -5,9 +5,10 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-strict n {
+typedef struct n {
  int a;
-}
+ int b;
+}no;
 
 int main()
 {
@@ -15,6 +16,7 @@ int main()
 	struct stat *a = (struct stat *)malloc(sizeof(struct stat));
 	stat("hello.txt", &buff);
 	stat("open.c", a);
+	no  = malloc(sizeof(no));
 
 	int ino = buff.st_ino;
 	int uid = a->st_uid;
