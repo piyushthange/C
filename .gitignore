@@ -4,6 +4,8 @@ pwn/*
 YT/*
 ds-algo/*
 kernel-programming/*
+cpp/main
+
 
 !kernel-programming/*.c
 !ds-algo/*.c
