@@ -1,6 +1,6 @@
 #include <iostream>
-#include "const.h"
-#include "cylinder.h"
+#include "3_const.h"
+#include "3_cylinder.h"
 
 int main() {
 	Cylinder c2;
