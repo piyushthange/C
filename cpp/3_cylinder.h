@@ -1,5 +1,6 @@
 #ifndef CYLINDER_H
 #define CYLINDER_H
+#include "3_const.h"
 
 class Cylinder {
 	private:
@@ -8,10 +9,13 @@ class Cylinder {
 	public:
 		//constructors
 		Cylinder() = default;
+		Cylinder(double r_main, double h_main);
+		/*
 		Cylinder(double r_main, double h_main){
 			r = r_main;
 			h = h_main;
 		}
+		*/
 
 		double vol(){
 			return PI * r * h;
