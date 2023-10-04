@@ -1,5 +1,4 @@
 #include <iostream>
-#include "3_const.h"
 #include "3_cylinder.h"
 
 int main() {
