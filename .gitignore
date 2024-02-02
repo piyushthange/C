@@ -7,7 +7,7 @@ kernel-programming/*
 cpp/main
 LetUsC/main
 
-
+!sysd/
 !kernel-programming/*.c
 !ds-algo/*.c
 !YT/*.c
