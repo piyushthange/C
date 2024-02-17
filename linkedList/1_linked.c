@@ -22,6 +22,9 @@ void printll(node *head) {
 int main(int argc, char *argv[]) {
 	node *head = (struct node *)malloc(sizeof(node));
 	head->i = 23;
+	node *a = (struct node *)malloc(sizeof(node));
+	a->i = 44;
+	head->next = a;
 
 	printll(head);
 }
