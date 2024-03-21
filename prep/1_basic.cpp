@@ -12,6 +12,11 @@ int main(int argc, char *argv[]) {
 	bool = 0; //bool is of 1 byte
 	float = 1.28; //float is of 4 bytes
 	double = 983.9812734; // double is of 8 bytes
- // if else
+	// if else
+	if(a < b)
+		cout << a << "is less";
+	else
+		cout << b <<  "is less";
+	
 	return 0;
 }
