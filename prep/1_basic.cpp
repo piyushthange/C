@@ -19,7 +19,9 @@ int main(int argc, char *argv[]) {
 		cout << b <<  "is less";
 	// add looping
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 5; i++){
+     cout << "print in loop" << endl;
+}
 	
 	return 0;
 }
