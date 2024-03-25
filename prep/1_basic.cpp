@@ -23,5 +23,7 @@ int main(int argc, char *argv[]) {
      cout << "print in loop" << endl;
 }
 	
+while
+dowhile
 	return 0;
 }
