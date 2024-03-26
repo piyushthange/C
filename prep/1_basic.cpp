@@ -20,10 +20,15 @@ int main(int argc, char *argv[]) {
 	// add looping
 
 	for (int i = 0; i < 5; i++){
-     cout << "print in loop" << endl;
-}
-	
-while
-dowhile
+		cout << "print in loop" << endl;
+	}
+
+	int j = 20;
+	while (j < 43) {
+		cout << "Print it from 20 to 42" << j << endl;
+		j++;
+	}
+
 	return 0;
+
 }
