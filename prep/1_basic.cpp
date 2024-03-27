@@ -28,7 +28,5 @@ int main(int argc, char *argv[]) {
 		cout << "Print it from 20 to 42" << j << endl;
 		j++;
 	}
-
 	return 0;
-
 }
