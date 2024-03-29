@@ -32,3 +32,4 @@ int main(int argc, char *argv[]) {
 }
 
 //write a function for htop
+//check for process & monitor it 
