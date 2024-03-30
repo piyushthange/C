@@ -8,10 +8,10 @@ int main(int argc, char *argv[]) {
 	long int d = 323; //long int can hold 8 bytes & of signed 
 	unsigned long int e =  23847; //this'll hold 8 bytes of +ve integers
 	
-	char = 'a'; //char is of 1 byte --> 8bits
-	bool = 0; //bool is of 1 byte
-	float = 1.28; //float is of 4 bytes
-	double = 983.9812734; // double is of 8 bytes
+	char ch = 'a'; //char is of 1 byte --> 8bits
+	bool bl= 0; //bool is of 1 byte
+	float s = 1.28; //float is of 4 bytes
+	double t = 983.9812734; // double is of 8 bytes
 	// if else
 	if(a < b)
 		cout << a << "is less";
@@ -25,11 +25,14 @@ int main(int argc, char *argv[]) {
 
 	int j = 20;
 	while (j < 43) {
-		cout << "Print it from 20 to 42" << j << endl;
+		cout << "Print it from 20 to 42 " << j << endl;
 		j++;
 	}
+
+	// user input console input/output
+	int r, x;
+	cin >> r;
+	cin >> x;
+	cout << r + x;
 	return 0;
 }
-
-//write a function for htop
-//check for process & monitor it 
