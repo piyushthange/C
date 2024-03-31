@@ -34,5 +34,13 @@ int main(int argc, char *argv[]) {
 	cin >> r;
 	cin >> x;
 	cout << r + x;
+
+	int package;
+	cin >> package;
+	if (package > 10) {
+		cout << "Good\n";
+	} else {
+		cout << "Not Good\n";
+	}
 	return 0;
 }
