@@ -42,5 +42,15 @@ int main(int argc, char *argv[]) {
 	} else {
 		cout << "Not Good\n";
 	}
+	
+	// even odd
+	int num;
+	cout << "Enter Number: ";
+	cin >> num;
+
+	if (num % 2 == 0) 
+		cout << "Even\n";
+	else
+		cout << "Odd\n";
 	return 0;
 }
