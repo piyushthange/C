@@ -52,5 +52,14 @@ int main(int argc, char *argv[]) {
 		cout << "Even\n";
 	else
 		cout << "Odd\n";
+
+	// else if
+	if (num > 0)
+		cout << "+ve number\n";
+	else if (num < 0)
+		cout << "-ve number\n";
+	else
+		cout << "Zero\n";
+
 	return 0;
 }
