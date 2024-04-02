@@ -70,5 +70,14 @@ int main(int argc, char *argv[]) {
 	for (int fs=0; fs < 6; fs++){
 		cout << fs * fs << endl;
 	}
+
+	// n natural numbers
+
+	int nn;
+	cout << "Enter n to print natural number: ";
+	cin >> nn;
+	for (int n=0; n < nn; n++) {
+		cout << n << endl;
+	}
 	return 0;
 }
