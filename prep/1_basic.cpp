@@ -36,6 +36,7 @@ int main(int argc, char *argv[]) {
 	cout << r + x;
 
 	int package;
+	cout << "Enter package now: ";
 	cin >> package;
 	if (package > 10) {
 		cout << "Good\n";
@@ -63,7 +64,7 @@ int main(int argc, char *argv[]) {
 	
 	// Loops
 	for (int fd=0; fd < 3; fd++) {
-		cout << "Fd" << i << endl;
+		cout << "Fd" << fd << endl;
 	}
 
 	//square
@@ -72,12 +73,12 @@ int main(int argc, char *argv[]) {
 	}
 
 	// n natural numbers
-
 	int nn;
 	cout << "Enter n to print natural number: ";
 	cin >> nn;
 	for (int n=0; n < nn; n++) {
 		cout << n << endl;
 	}
+
 	return 0;
 }
