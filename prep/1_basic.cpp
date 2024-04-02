@@ -80,5 +80,15 @@ int main(int argc, char *argv[]) {
 		cout << n << endl;
 	}
 
+	// even odd
+
+	for(int i=1; i<= nn; i=i+1) {
+		if (i%2 == 0) {
+			cout << i << " ";
+		}
+		cout << "\n";
+
+	}
+
 	return 0;
 }
