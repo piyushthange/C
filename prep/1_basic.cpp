@@ -60,6 +60,15 @@ int main(int argc, char *argv[]) {
 		cout << "-ve number\n";
 	else
 		cout << "Zero\n";
+	
+	// Loops
+	for (int fd=0; fd < 3; fd++) {
+		cout << "Fd" << i << endl;
+	}
 
+	//square
+	for (int fs=0; fs < 6; fs++){
+		cout << fs * fs << endl;
+	}
 	return 0;
 }
