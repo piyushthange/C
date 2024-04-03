@@ -87,8 +87,13 @@ int main(int argc, char *argv[]) {
 			cout << i << " ";
 		}
 		cout << "\n";
-
 	}
 
+	// a to z print
+	char az = 'a';
+	for (int i = 0; i < 26; i++) {
+		cout << az;
+		az = az + 1;
+	}
 	return 0;
 }
