@@ -24,10 +24,12 @@ int main(int argc, char *argv[]) {
 	}
 
 	int j = 20;
+	cout << "Print it from 20 to 42 " << j << endl;
 	while (j < 43) {
-		cout << "Print it from 20 to 42 " << j << endl;
+		cout << j << " ";
 		j++;
 	}
+	cout << "\n";
 
 	// user input console input/output
 	int r, x;
@@ -66,6 +68,7 @@ int main(int argc, char *argv[]) {
 	for (int fd=0; fd < 3; fd++) {
 		cout << "Fd" << fd << endl;
 	}
+	cout << "\n";
 
 	//square
 	for (int fs=0; fs < 6; fs++){
@@ -86,8 +89,8 @@ int main(int argc, char *argv[]) {
 		if (i%2 == 0) {
 			cout << i << " ";
 		}
-		cout << "\n";
 	}
+	cout << "\n";
 
 	// a to z print
 	char az = 'a';
@@ -95,5 +98,6 @@ int main(int argc, char *argv[]) {
 		cout << az;
 		az = az + 1;
 	}
+	cout << "\n";
 	return 0;
 }
