@@ -99,5 +99,12 @@ int main(int argc, char *argv[]) {
 		az = az + 1;
 	}
 	cout << "\n";
+
+	// ascii chars
+	for (int i = 0; i < 255; i++) {
+		cout << (char)i << endl;
+	}
+	cout << "\n";
 	return 0;
+
 }
