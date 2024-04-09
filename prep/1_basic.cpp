@@ -107,6 +107,8 @@ int main(int argc, char *argv[]) {
 	cout << "\n";
 	return 0;
 
-// add Boolean 
+	for (char name = 'a'; name <= z; name = name+1) {
+		cout << name << endl;
+	}
 
 }
