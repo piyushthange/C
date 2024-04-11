@@ -7,4 +7,6 @@ int main(int argc, char *argv[])
 		printf("%d --> %c \n", i, i);		
 	}
 	printf("\n");
+
+	return 0;
 }
