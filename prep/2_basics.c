@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+int sum(int n);
+
 int main(int argc, char *argv[]) {
 	
 	//print power to int
@@ -15,5 +17,19 @@ int main(int argc, char *argv[]) {
 	}
 	printf ("%d\n", num);
 
+	int asdf = sum(3);
+	printf("%d\n", asdf);
+
 	return 0;
+}
+
+int sum(int n) {
+	int s = 0;
+	for (int i = 0; i <= n; i++) {
+		s = s + i;
+	}
+	printf("%d\n", s);
+	// next format
+//	s = (n * (n+1))/2;
+	return s;
 }
