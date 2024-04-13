@@ -117,6 +117,12 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "\n";
 
+	// setp printing by 4;
+	for (int i=0; i < 100; i=i+3) {
+		cout << i;
+	}
+	cout << "\n"
+
 	return 0;
 
 }
