@@ -111,7 +111,12 @@ int main(int argc, char *argv[]) {
 		cout << name << endl;
 	}
 
-	//add something 
+	// print reverse order
+	for (int i = 10; i >= 1; i = i -1) {
+		cout << i;
+	}
+	cout << "\n";
+
 	return 0;
 
 }
