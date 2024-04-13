@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+int sum(int n);
+
 int main(int argc, char *argv[]) {
 	int a = 4; // int can store 4 bytes. This is signed int & default
 	unsigned int b = 4; //This is unsigned int & can store 2^32 +ve integers
@@ -144,6 +146,19 @@ int main(int argc, char *argv[]) {
 		rnum = rnum * anum;
 	}
 
+	// Sum of n interger
+	sum(2);
+
 	return 0;
 
+}
+
+int sum(int n) {
+	int s = 0;
+	for (int i = 0; i < n; i++) {
+		s = s + i;
+	}
+	// next format
+	s = (n * (n+1))/2;
+	return s;
 }
