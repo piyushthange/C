@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
 	cout << "\n";
 	return 0;
 
-	for (char name = 'a'; name <= z; name = name+1) {
+	for (char name = 'a'; name <= az; name = name+1) {
 		cout << name << endl;
 	}
 
@@ -124,6 +124,7 @@ int main(int argc, char *argv[]) {
 	cout << "\n";
 
 	// print table
+	int tab;
 	cout << "Enter the number to print table of it: ";
 	cin >> tab;
 
@@ -131,7 +132,17 @@ int main(int argc, char *argv[]) {
 		cout << i * tab << " ";
 	}
 	cout << "\n";
+	
+	// power to a number
+	int anum, pow, rnum;
+	cout << "Enter number & power to it: ";
+	cin >> anum;
+	cin >> pow;
+	rnum = anum;
 
+	for (int i = 1; i < pow; i++) {
+		rnum = rnum * anum;
+	}
 
 	return 0;
 
