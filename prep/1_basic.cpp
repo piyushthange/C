@@ -121,7 +121,17 @@ int main(int argc, char *argv[]) {
 	for (int i=0; i < 100; i=i+3) {
 		cout << i;
 	}
-	cout << "\n"
+	cout << "\n";
+
+	// print table
+	cout << "Enter the number to print table of it: ";
+	cin >> tab;
+
+	for (int i=0; i <= 10; i++) {
+		cout << i * tab << " ";
+	}
+	cout << "\n";
+
 
 	return 0;
 
