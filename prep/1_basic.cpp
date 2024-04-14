@@ -162,3 +162,11 @@ int sum(int n) {
 	s = (n * (n+1))/2;
 	return s;
 }
+
+int factorial(int a) {
+	int s = a;
+	for (int i = 1; i <= a; i++) {
+		s = s * i;
+	}
+	return s;
+}
