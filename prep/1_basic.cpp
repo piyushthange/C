@@ -148,6 +148,7 @@ int main(int argc, char *argv[]) {
 
 	// Sum of n interger
 	sum(2);
+	factorial(5);
 
 	return 0;
 
