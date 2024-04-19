@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int sum(int n);
+int factorial(int a);
 
 int main(int argc, char *argv[]) {
 	
@@ -19,6 +20,7 @@ int main(int argc, char *argv[]) {
 
 	int asdf = sum(3);
 	printf("%d\n", asdf);
+	factorial(4);
 
 	return 0;
 }
