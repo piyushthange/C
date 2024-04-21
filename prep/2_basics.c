@@ -7,8 +7,6 @@ int pat1(int a);
 
 int main(int argc, char *argv[]) {
 	
-	//print power to int
-	//int a, pow, num;
 	//factorial(4);
 //	int asdf = sum(3);
 	prime(7);
@@ -20,6 +18,7 @@ int main(int argc, char *argv[]) {
 }
 
 int pow(int a, int b) {
+	int a, pow, num;
 	printf("Enter a Number & power: ");
 	scanf("%d", &a);
 	scanf("%d",&pow);
@@ -71,6 +70,15 @@ int pat1(int a) {
 	for(int i=0; i < a; i++) {
 		for (int j=0; j < a; j++) {
 			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+int pat2(int a) {
+	for (int i = 0; i < a; i++) {
+		for (int j=0; j < a; j++) {
+			printf("%d ", i);
 		}
 		printf("\n");
 	}
