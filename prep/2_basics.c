@@ -9,26 +9,25 @@ int main(int argc, char *argv[]) {
 	
 	//print power to int
 	//int a, pow, num;
-	//printf("Enter a Number & power: ");
-	//scanf("%d", &a);
-	//scanf("%d",&pow);
-	//scanf ("%d %d", &a, &pow);
-	//num = a;
-
-//	for (int i=1; i < pow; i++){
-//		num = num * a;
-//	}
-//	printf ("%d\n", num);
-//
-//	int asdf = sum(3);
-//	printf("%d\n", asdf);
 	//factorial(4);
+//	int asdf = sum(3);
 	prime(7);
 	prime(12);
 	prime(1);
 	pat1(5);
 
 	return 0;
+}
+
+int pow(int a, int b) {
+	printf("Enter a Number & power: ");
+	scanf("%d", &a);
+	scanf("%d",&pow);
+//	scanf ("%d %d", &a, &pow);
+	int s = a;
+	for (int i = 1; i < b; i++) {
+		s = s * s;
+	}
 }
 
 int sum(int n) {
