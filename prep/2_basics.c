@@ -3,6 +3,7 @@
 int sum(int n);
 int factorial(int a);
 int prime(int a);
+int pat1(int a);
 
 int main(int argc, char *argv[]) {
 	
@@ -25,6 +26,7 @@ int main(int argc, char *argv[]) {
 	prime(7);
 	prime(12);
 	prime(1);
+	pat1(5);
 
 	return 0;
 }
@@ -63,5 +65,14 @@ int prime(int a) {
 
 		printf("Prime Number\n");
 		return 0;
+	}
+}
+
+int pat1(int a) {
+	for(int i=0; i < a; i++) {
+		for (int j=0; j < a; j++) {
+			printf("*");
+		}
+		printf("\n");
 	}
 }
