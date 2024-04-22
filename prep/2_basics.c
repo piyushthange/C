@@ -4,6 +4,8 @@ int sum(int n);
 int factorial(int a);
 int prime(int a);
 int pat1(int a);
+int pat2(int a);
+int pw(int a, int b);
 
 int main(int argc, char *argv[]) {
 	
@@ -13,17 +15,18 @@ int main(int argc, char *argv[]) {
 	prime(12);
 	prime(1);
 	pat1(5);
+	pat2(5);
 
 	return 0;
 }
 
-int pow(int a, int b) {
-	int a, pow, num;
+int pw(int a, int b) {
+	int r, pw, num;
 	printf("Enter a Number & power: ");
-	scanf("%d", &a);
-	scanf("%d",&pow);
+	scanf("%d", &r);
+	scanf("%d",&pw);
 //	scanf ("%d %d", &a, &pow);
-	int s = a;
+	int s = r;
 	for (int i = 1; i < b; i++) {
 		s = s * s;
 	}
