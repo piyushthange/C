@@ -10,7 +10,6 @@ int pw(int a, int b);
 int main(int argc, char *argv[]) {
 	
 	//factorial(4);
-//	int asdf = sum(3);
 	prime(7);
 	prime(12);
 	prime(1);
@@ -86,3 +85,4 @@ int pat2(int a) {
 		printf("\n");
 	}
 }
+
