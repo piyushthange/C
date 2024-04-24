@@ -86,3 +86,4 @@ int pat2(int a) {
 	}
 }
 
+//start pointers here
