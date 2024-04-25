@@ -85,5 +85,3 @@ int pat2(int a) {
 		printf("\n");
 	}
 }
-
-//start pointers here
