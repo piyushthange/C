@@ -13,3 +13,6 @@ int main(int argc, char *argv[])
 }
 
 //functions
+int ascii_prnt(int i) {
+
+}
