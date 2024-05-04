@@ -79,6 +79,7 @@ int pat1(int a) {
 	}
 }
 
+//pattern 2
 int pat2(int a) {
 	for (int i = 0; i < a; i++) {
 		for (int j=0; j < a; j++) {
