@@ -88,3 +88,6 @@ int pat2(int a) {
 		printf("\n");
 	}
 }
+
+
+//fixed function
