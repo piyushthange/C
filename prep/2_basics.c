@@ -69,6 +69,7 @@ int prime(int a) {
 	}
 }
 
+// Matrix pattern 
 int pat1(int a) {
 	for(int i=0; i < a; i++) {
 		for (int j=0; j < a; j++) {
@@ -78,6 +79,7 @@ int pat1(int a) {
 	}
 }
 
+//pattern 2
 int pat2(int a) {
 	for (int i = 0; i < a; i++) {
 		for (int j=0; j < a; j++) {
@@ -86,4 +88,3 @@ int pat2(int a) {
 		printf("\n");
 	}
 }
-//teste here
