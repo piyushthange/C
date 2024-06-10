@@ -8,6 +8,7 @@ int pat1(int a);
 int pat2(int a);
 int pw(int a, int b);
 void scan_print();
+void size_of();
 
 int main(int argc, char *argv[]) {
 	
@@ -17,8 +18,9 @@ int main(int argc, char *argv[]) {
 //	prime(1);
 //	pat1(5);
 //	pat2(5);
-
-	scan_print();
+//	scan_print();
+	
+	size_of();
 
 	return 0;
 }
@@ -96,4 +98,15 @@ void scan_print() {
 	char s[25];
 	scanf("%s", s);
 	printf("%s\n", s);
+}
+
+
+void size_of() {
+	printf("int %ld\n", sizeof(int));
+	printf("void %ld\n", sizeof(void));
+	printf("void *%ld\n", sizeof(void *));
+	printf("float%ld\n", sizeof(float));
+	printf("double%ld\n", sizeof(double));
+	printf("char %ld\n", sizeof(char));
+	printf("unsigned int%ld\n", sizeof(unsigned int));
 }
