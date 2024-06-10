@@ -7,15 +7,18 @@ int prime(int a);
 int pat1(int a);
 int pat2(int a);
 int pw(int a, int b);
+void scan_print();
 
 int main(int argc, char *argv[]) {
 	
 	//factorial(4);
-	prime(7);
-	prime(12);
-	prime(1);
-	pat1(5);
-	pat2(5);
+//	prime(7);
+//	prime(12);
+//	prime(1);
+//	pat1(5);
+//	pat2(5);
+
+	scan_print();
 
 	return 0;
 }
@@ -87,4 +90,10 @@ int pat2(int a) {
 		}
 		printf("\n");
 	}
+}
+
+void scan_print() {
+	char s[25];
+	scanf("%s", s);
+	printf("%s\n", s);
 }
