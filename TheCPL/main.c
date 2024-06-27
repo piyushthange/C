@@ -3,6 +3,7 @@
 
 void rev_str();
 void far_cel();
+char rev(char *str);
 
 int main(int arc, char *argv[])
 {
@@ -40,4 +41,14 @@ void rev_str() {
 	}
 
 	printf("Reversed: %s\n", cp);
+}
+
+char rev(char *str)
+{
+	char *b = str;
+	len = strlen(str);
+	for (int i = 0; i < len; i++)
+	{
+		b[i] = str[len - (i + 1)];
+	}
 }
