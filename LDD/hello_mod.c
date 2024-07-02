@@ -1,7 +1,9 @@
 #include <linux/module.h>
 #include <linux/init.h>
 
-/* Mod Inf */
+/* Mod Inf
+ * find module.h & init.h file
+*/
 MODULE_LICENSE("GPLv2");
 MODULE_AUTHOR("Pi");
 MODULE_DESCRIPTION("This is hello module & can be loaded using insmod/rmmod/lsmod");
