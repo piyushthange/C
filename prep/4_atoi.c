@@ -71,8 +71,5 @@ int main(int argc, char **argv) {
     printf("%d ", my_atoi(test_base16, strlen(test_base16), 16));
     printf("\n==============\n");
 
-    test_base16 = "FF";
-    printf("%d ", my_atoi(test_base16, strlen(test_base16), 16));
-    printf("\n==============\n");
     return 0; 
 }
