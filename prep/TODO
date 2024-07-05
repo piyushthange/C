@@ -1,3 +1,5 @@
 8 June -> start C with c++
 setrlimit
 
+mmap()
+fork()
