@@ -9,6 +9,21 @@ public:
 	string grade;
 };
 
+class Teacher{
+private:
+	string name;
+	string dept;
+	int salary;
+public:
+	void set_name(string name) {
+		this->name = name;
+	}
+
+	void get_name() {
+		cout << name << endl;
+	}
+};
+
 int main(int argc, char *argv[])
 {
 	Student s1;
@@ -18,7 +33,10 @@ int main(int argc, char *argv[])
 	s1.grade = "A";
 
 	cout << s1.age << endl;
-
+	Student s2;
+	Teacher t1;
+	t1.set_name("Mark");
+	cout << t1.get_name() << endl;
 
 	return 0;
 }
