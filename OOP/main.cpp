@@ -15,8 +15,8 @@ private:
 	string dept;
 	int salary;
 public:
-	void set_name(string name) {
-		this->name = name;
+	void set_name(string n) {
+		name = n;
 	}
 
 	void get_name() {
