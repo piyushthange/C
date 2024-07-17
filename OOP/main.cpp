@@ -3,40 +3,45 @@
 using namespace std;
 
 class Student {
-public:
+private:
 	string name;
 	int age, roll;
 	string grade;
-};
-
-class Teacher{
-private:
-	string name;
-	string dept;
-	int salary;
 public:
-	void set_name(string n) {
-		name = n;
+	void setname(string s)
+	{
+		name = s;
 	}
 
-	void get_name() {
+	void setage(int a)
+	{
+		age = a;
+	}
+
+	void setgrade(string g)
+	{
+		grade = g;
+	}
+
+	void setroll(int r) {
+		roll = r;
+	}
+
+	void getname() {
 		cout << name << endl;
 	}
+
 };
 
 int main(int argc, char *argv[])
 {
 	Student s1;
-	s1.name = "nemo";
-	s1.age = 10;
-	s1.roll = 292;
-	s1.grade = "A";
-
-	cout << s1.age << endl;
-	Student s2;
-	Teacher t1;
-	t1.set_name("Mark");
-	cout << t1.get_name() << endl;
+	s1.setname("nemo");
+	s1.setage(29);
+	s1.setroll(30);
+	s1.setgrade("A+");
+	
+	s1.getname();
 
 	return 0;
 }
