@@ -23,6 +23,8 @@ public:
 	}
 };
 
+static int Customer::total_customer=0
+
 int main() {
 	Customer("Raj", 10, 9283);
 	Customer("Ram", 29, 2938489);
