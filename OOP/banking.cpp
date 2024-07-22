@@ -11,6 +11,7 @@ public:
 		this->name = name;
 		this->acc = acc;
 		this->bal = bal;
+		total_customer += 1;
 	}
 
 	void display() {
