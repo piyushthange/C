@@ -12,6 +12,7 @@ struct ds{
 	float dw;
 	double de;
 };
+//padding happens
 
 int main(int argc, char *argv[]) {
 	struct a ab;
