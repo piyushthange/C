@@ -9,15 +9,17 @@ typedef struct node {
 
 node *add_begin(node *head, int i); //pass by value
 void add_to_begin(node **head, int d); //pass by reference
-
 node *add_end(node *ptr, int i);
+
 node *del(node *head); //delete complete list
 node *del_first_node(node *head);
 node *del_last_node(node *head);
 void del_last_node_single_pointer(node *head);
-void del_at_pos(node *head, int pos);
+void del_at_pos(node **head, int pos);
+
 node *ins_at_pos(node *head, int i, int pos);
 node *rev(node *head);
+
 void pr(node *head);
 
 int main() {
@@ -64,7 +66,10 @@ int main() {
 	del_last_node_single_pointer(head);
 	pr(head);
 	
-	del_at_pos(head, 2);
+	printf("Delete at given Position : ");
+	del_at_pos(&head, 2);
+	pr(head);
+
 
 	printf("----> Deleting Linked list <---- ");
 	head = del(head);
@@ -137,18 +142,26 @@ void del_last_node_single_pointer(node *head) {
 	ptr->next = NULL;
 }
 
-void del_at_pos(node *head, int pos) {
-	node *ptr = head;
-	node *del = head;
+void del_at_pos(node **head, int pos) {
+	node *current = *head;
+	node *prev = *head;
 
-	pos--;
-	while(pos != 1) {
-		ptr = ptr->next;
-		pos--;
+	if(*head == NULL)
+		printf("List is empty\n");
+	else if (pos == 1) {
+		*head = current->next;
+		free(current);
+		current = NULL;
+	} else {
+		while(pos != 1) {
+			prev = current;
+			current = current->next;
+			pos--;
+		}
+		prev->next = current->next;
+		free(current);
+		current = NULL;
 	}
-	del = ptr;
-	ptr = ptr
-	printf("%d \n", ptr->i);
 }
 
 node *rev(node *head) {
