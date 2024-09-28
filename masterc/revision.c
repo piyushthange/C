@@ -15,7 +15,7 @@ node *del(node *head); //delete complete list
 node *del_first_node(node *head);
 node *del_last_node(node *head);
 void del_last_node_single_pointer(node *head);
-void del_at_pos(node **head, int pos);
+void del_at_pos(node *head, int pos);
 
 node *ins_at_pos(node *head, int i, int pos);
 node *rev(node *head);
@@ -67,7 +67,7 @@ int main() {
 	pr(head);
 	
 	printf("Delete at given Position : ");
-	del_at_pos(&head, 2);
+	del_at_pos(head, 3);
 	pr(head);
 
 
@@ -142,14 +142,14 @@ void del_last_node_single_pointer(node *head) {
 	ptr->next = NULL;
 }
 
-void del_at_pos(node **head, int pos) {
-	node *current = *head;
-	node *prev = *head;
+void del_at_pos(node *head, int pos) {
+	node *current = head;
+	node *prev = head;
 
-	if(*head == NULL)
+	if(head == NULL)
 		printf("List is empty\n");
 	else if (pos == 1) {
-		*head = current->next;
+		head = current->next;
 		free(current);
 		current = NULL;
 	} else {
@@ -192,6 +192,8 @@ node *ins_at_pos(node *head, int i, int pos) {
 
 	tmp->next = ptr->next;
 	ptr->next = tmp;
+	free(tmp);
+	tmp = NULL;
 	return ptr;
 }
 
