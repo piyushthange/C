@@ -1,71 +1,200 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <string.h>
 
 typedef struct node {
 	int i;
 	struct node *next;
 }node;
 
-void print_ll(node *head);
-
-node *ins_at_begin(node *head, int i); //pass by value
-void add_begin(node **head, int d);	// pass by reference
-
+node *add_begin(node *head, int i); //pass by value
+void add_to_begin(node **head, int d); //pass by reference
 node *add_end(node *ptr, int i);
 
-int main(int argc, char *argv[]) {
-	
+node *del(node *head); //delete complete list
+node *del_first_node(node *head);
+node *del_last_node(node *head);
+void del_last_node_single_pointer(node *head);
+void del_at_pos(node *head, int pos);
+
+node *ins_at_pos(node *head, int i, int pos);
+node *rev(node *head);
+
+void pr(node *head);
+
+int main() {
 	node *head = (node *)malloc(sizeof(node));
-	head->i = 23;
+	head->i = 22;
 	head->next = NULL;
 
 	node *ptr = head;
-	ptr = add_end(ptr, 10); //ptr points to last node of list;
+	ptr = add_end(ptr, 10);
 	ptr = add_end(ptr, 20);
 	ptr = add_end(ptr, 30);
+	ptr = add_end(ptr, 40);
+	ptr = add_end(ptr, 50);
+	ptr = add_end(ptr, 60);
 
-	print_ll(head);
+	printf("Addded Elemenst : ");
+	pr(head);
 
-	ptr = add_end(ptr, 45);
-	head = ins_at_begin(head, 5); //pass by value
-	print_ll(head);
-	add_begin(&head, 2); //pass by reference
-	print_ll(head);
+	printf("Insert at position : ");
+	ins_at_pos(head, 2, 2);
+	pr(head);
+
+	printf("Reverse Linked List : ");
+	head = rev(head);
+	pr(head);
+
+	printf("Add node at Begining using PASS BY VALLUE\n");
+	head = add_begin(head, 55);
+	pr(head);
+
+	printf("Add node at Begining using PASS BY REFERENCE\n");
+	add_to_begin(&head, 12);
+	pr(head);
+
+	printf("Delete First Node : ");
+	head = del_first_node(head);
+	pr(head);
+
+	printf("Delete Last Node : ");
+	head = del_last_node(head);
+	pr(head);
+
+	printf("Del last node using single pointer : ");
+	del_last_node_single_pointer(head);
+	pr(head);
+	
+	printf("Delete at given Position : ");
+	del_at_pos(head, 3);
+	pr(head);
+
+
+	printf("----> Deleting Linked list <---- ");
+	head = del(head);
+	pr(head);
+	if(head == NULL) 
+		printf("Linked List Deleted Successfully\n");
+
+	return 0;
 }
 
-void add_begin(node **head, int d) {
+node *add_begin(node *head, int i) {
 	node *ptr = (node *)malloc(sizeof(node));
-	ptr->i = d;
+	ptr->i = i;
+	ptr->next = NULL;
+
+	ptr = head;
+	head = ptr;
+	return head;
+}
+
+void add_to_begin(node **head, int i) {
+	node *ptr = (node *)malloc(sizeof(node));
+	ptr->i = i;
 	ptr->next = NULL;
 
 	ptr->next = *head;
 	*head = ptr;
 }
 
-node *ins_at_begin(node *head, int i) {
-	node *ptr = (node *)malloc(sizeof(node));
-	ptr->i = i;
-	ptr->next = NULL;
+node *del_first_node(node *head) {
+	if(head == NULL)
+		printf("List is Empty\n");
 
-	ptr->next = head;
+	node *ptr = head->next;
+	free(head);
 	head = ptr;
 	return head;
 }
 
-node *ins_at_pos(node *head, int i, int pos) {
+// void del_last_node(node *head) can be used & at end remove return from functon
+node *del_last_node(node *head) {
+	node *ptr = head; //second last ptr
+	node *last_ptr = head;
+
+	if (head == NULL)
+		printf("List is empty\n");
+	else if (head->next == NULL) {
+		free(head);
+		head = NULL;
+	} else {
+		while(last_ptr->next != NULL) {
+			ptr = last_ptr;
+			last_ptr = last_ptr->next;
+		}
+		ptr->next = NULL;
+		free(last_ptr);
+		last_ptr = NULL;
+	}
+	return head;
+}
+
+//delete last node using single pointer
+void del_last_node_single_pointer(node *head) {
 	node *ptr = head;
+
+	while(ptr->next->next != NULL) {
+		ptr = ptr->next;
+	}
+	free(ptr->next);
+	ptr->next = NULL;
+}
+
+void del_at_pos(node *head, int pos) {
+	node *current = head;
+	node *prev = head;
+
+	if(head == NULL)
+		printf("List is empty\n");
+	else if (pos == 1) {
+		head = current->next;
+		free(current);
+		current = NULL;
+	} else {
+		while(pos != 1) {
+			prev = current;
+			current = current->next;
+			pos--;
+		}
+		prev->next = current->next;
+		free(current);
+		current = NULL;
+	}
+}
+
+node *rev(node *head) {
+	node *p, *n;
+	p = NULL;
+
+	while(head != NULL) {
+		n = head->next;
+		head->next = p;
+		p = head;
+		head = n;
+	}
+	head = p;
+	return head;
+	
+}
+
+node *ins_at_pos(node *head, int i, int pos) {
 	node *tmp = (node *)malloc(sizeof(node));
+	node *ptr = head;
 	tmp->i = i;
 	tmp->next = NULL;
 
 	pos--;
-	while (pos != 1) {
+	for(int k = 0; k < pos - 1; k++) {
 		ptr = ptr->next;
-		pos--;
 	}
+
 	tmp->next = ptr->next;
 	ptr->next = tmp;
+	free(tmp);
+	tmp = NULL;
+	return ptr;
 }
 
 node *add_end(node *ptr, int i) {
@@ -73,18 +202,26 @@ node *add_end(node *ptr, int i) {
 	tmp->i = i;
 	tmp->next = NULL;
 
-	if (ptr == NULL) {
-		printf("List is empty\n");
-		exit(1);
+	ptr->next = tmp;
+	ptr = tmp;
+	return ptr;
+}
+
+node *del(node *head) {
+	node *tmp = head;
+	while (tmp != NULL) {
+		tmp = head->next;
+		free(head);
+		head = tmp;
 	}
 
-	ptr->next = tmp;
 	return tmp;
 }
 
-void print_ll(node *head) {
+void pr(node *head) {
 	node *ptr = head;
-	while(ptr != NULL) {
+
+	while (ptr != NULL) {
 		printf("%d ", ptr->i);
 		ptr = ptr->next;
 	}
