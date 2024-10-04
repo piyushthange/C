@@ -9,19 +9,47 @@ typedef struct node {
 node *add_end(node *ptr, int i);
 void pr(node *head);
 node *mergeTwoLists(node *list1, node *list2);
+node *del_ll(node *head);
 
 int main() {
-	node *head = malloc(sizeof(node));
-	head->i = 1;
-	head->next = NULL;
+	node *list1 = malloc(sizeof(node));
+	list1->i = 1;
+	list1->next = NULL;
 
-	node *ptr = head;
+	node *ptr = list1;
 	ptr = add_end(ptr,2);
 	ptr = add_end(ptr,4);
+	ptr = add_end(ptr,5);
 	ptr = add_end(ptr,6);
 	ptr = add_end(ptr,8);
+	ptr = add_end(ptr,10);
 
-	pr(head);
+	pr(list1);
+
+	node *list2 = (node *)malloc(sizeof(node));
+	list2->i = 0;
+	list2->next = NULL;
+
+	node *ptr2 = list2;
+	ptr2 = add_end(ptr2, 3);
+	ptr2 = add_end(ptr2, 5);
+	ptr2 = add_end(ptr2, 7);
+	ptr2 = add_end(ptr2, 9);
+	ptr2 = add_end(ptr2, 11);
+	ptr2 = add_end(ptr2, 12);
+	ptr2 = add_end(ptr2, 13);
+
+	pr(list2);
+
+	node *merged_list = NULL;
+	merged_list = mergeTwoLists(list1, list2);
+
+	pr(merged_list);
+
+	list1 = del_ll(list1);
+	if(list1 == NULL)
+		printf("Linked list deleted Successfully\n");
+	pr(list1);
 }
 
 node *add_end(node *ptr, int i) {
@@ -32,6 +60,17 @@ node *add_end(node *ptr, int i) {
 	ptr->next = tmp;
 	ptr = tmp;
 	return ptr;
+}
+
+node *del_ll(node *head){
+	node *tmp = head;
+	while(tmp != NULL) {
+		tmp = tmp->next;
+		free(head);
+		head = tmp;
+	}
+	head = tmp;
+	return head;
 }
 
 node *mergeTwoLists(node *list1, node *list2) {
