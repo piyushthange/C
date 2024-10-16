@@ -1,28 +1,40 @@
 #include <stdio.h>
 #include <sys/types.h>
 
-union endian_check {
-	char c;
-	unsigned int i;
+union endian_un{
+	int i;
+	unsigned char a[4];
 };
 
-int main(int argc, char *argv[]) {
-	unsigned int i = 1;
-	char *c = (char *)&i;
+void endian_check1();
+void endian_ptr();
 
-	if (*c != 0)
-		printf("Little Endian\n");
-	else
-		printf("Big Endian\n");
-	
+int main() {
+	endian_check1();
+	endian_ptr();
+}
 
-	// endian by union
-	union endian_check un;
-	un.i = 0x01;
-	
-	if (un.c == 1)
-		printf("Little Endian\n");
+void endian_ptr() {
+	int i = 1;
+	unsigned char *a = (char *)&i;
+
+	if(*a != 0)
+		printf("Arch is Little Endian\n");
 	else
-		printf("Big Endian\n");
-	return 0;
+		printf("Arch is Big Endian\n");
+}
+
+void endian_check1() {
+	union endian_un m1;
+	m1.i = 0xAABBCCDD;
+	printf("m1.i is : %X\n", m1.i);
+	if(m1.a[0] == 0xDD)
+		printf("Arch is LITTLE Endian\n");
+	else
+		printf("Arch is BIG Endian\n");
+
+	for(int i = 0; i < 4; i++) {
+		printf("%X ", m1.a[i]);
+	}
+	printf("\n");
 }
