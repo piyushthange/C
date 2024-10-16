@@ -1,53 +1,90 @@
 #include <stdio.h>
+#include <stdlib.h>
+static int tmp = -1;
 
-void pus(int a[],int b);
+void push(int *a, int len, int i);
 void pop(int *a);
-void top_ele(int *a);
-void stack_size();
+void ssize();
+void top(int *a);
 void pr(int *a, int len);
-static int top  = -1;
 
 int main() {
-	int a[10];
-	pus(a, 2);
-	pus(a, 3);
-	pus(a, 5);
-	pus(a, 8);
-	pus(a, 9);
+	int a[10] = {0};
+	//push, pop, top, size of stack,
+	push(a, 10, 1);
+	push(a, 10, 2);
+	push(a, 10, 3);
+	push(a, 10, 4);
+	push(a, 10, 5);
+	push(a, 10, 6);
+	push(a, 10, 7);
+	push(a, 10, 8);
 	pr(a, 10);
 	pop(a);
 	pr(a, 10);
-	pus(a, 11);
+	pop(a);
 	pr(a, 10);
-	top_ele(a);
-	stack_size();
+	pop(a);
+	pr(a, 10);
+	top(a);
+	ssize();
+	push(a, 10, 9);
+	push(a, 10, 10);
+	push(a, 10, 12);
+	push(a, 10, 11);
+	push(a, 10, 13);
+	push(a, 10, 14);
+	pr(a, 10);
 
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pop(a);
+	pr(a, 10);
+	top(a);
+	ssize();
+	return 0;
 }
 
-void pus(int a[], int b) {
-	top++;
-	a[top] = b;
+void push(int *a, int len, int i) {
+	if(tmp == len - 1) {
+		printf("The stack is full\n");
+	} else {
+		tmp++;
+		a[tmp] = i;
+	}
 }
 
 void pop(int *a) {
-	if(top == -1)
-		printf("The array is already empty\n");
-	else
-	top--;
+	if(tmp == -1) {
+		printf("The stack is alread empty\n");
+	} else {
+		a[tmp] = 0;
+		tmp--;
+	}
 }
 
-void stack_size() {
-	printf("Size of Stack: %d\n", top+1);
+void top(int *a) {
+	if(tmp == -1) {
+		printf("Stack Empty\n");
+	} else {
+		printf("Top element is : %d\n", a[tmp]);
+	}
 }
 
-void top_ele(int *a) {
-	printf("Top : %d\n", a[top]);
+void ssize() {
+	printf("Size of Stack is : %d\n", tmp+1);
 }
 
 void pr(int *a, int len) {
 	for(int i = 0; i < len; i++)
 		printf("%d ", a[i]);
-	
 	printf("\n");
-	
 }
