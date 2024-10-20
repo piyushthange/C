@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-//check even/odd using & with 1
+//check even/odd using & with 1 : x & 1 == 0 even : odd
 void check_even_odd(int x);
 
-// Detech 2 ints have opposite sign using ^
+// Detech 2 ints have opposite sign : x ^ y < 0
 void signs_of_ints(int x, int y);
 
-//add 1 to int
+//add 1 to int : -~x;
 void add_1(int x);
 
 //swap numbers without tmp variable
 void swap(int x, int y);
 
-//Turn OFF k'th bit in a number
+//Turn OFF k'th bit in a number : x & ~(1 << (k -1))
 void off_bit(int x, int k);
 
-//Turn ON k'th bit in a number
+//Turn ON k'th bit in a number : x | 1 << (k - 1)
 void on_bit(int x, int k);
 
 //Check if k'th bit is set for a number
@@ -30,6 +30,19 @@ void unset_rightmost_bit(int x);
 //Check if int is power of 2 without branching or loops
 void pow_of_2(int x);
 
+//Find position of the rightmost set bit
+void rightmost_set_bit(int x);
+
+//Alphabets in english
+//Convert Uppercase to Lowercase : ch | ' ';
+void up_to_low(char a);
+
+//Convert Lowercase to Upper : ch & '_';
+void low_to_up(char a);
+
+// Invert alphabet : ch ^ ' ';
+void invert_case(char a);
+
 int main() {
 	check_even_odd(6);
 	signs_of_ints(-5, -8);
@@ -41,6 +54,10 @@ int main() {
 	toggle_bit(20, 3);
 	unset_rightmost_bit(20);
 	pow_of_2(8);
+	rightmost_set_bit(20);
+	up_to_low('A');
+	low_to_up('z');
+	invert_case('k');
 }
 
 void check_even_odd(int x) {
@@ -111,5 +128,37 @@ void pow_of_2(int x) {
 		printf("%d is Power of 2\n", x);
 	else
 		printf("%d is NOT power of 2\n", x);
+	// method 2 -> x & -x == x
 		
+}
+
+void rightmost_set_bit(int x) {
+	//unset the rightmost bit;
+	int res = x;
+
+	int pos = 0;
+
+	while(res) {
+		res = res >> 1;
+		pos++;
+	}
+	printf("Position of Rightmost bit for %d : %d\n", x, pos);
+	
+	// method 2 -> x & -x 
+	printf("Alternate method for above : %d\n", x & -x);
+}
+
+void up_to_low(char a) {
+	char ans = a | ' ';
+	printf("%c\n", ans);
+}
+
+void low_to_up(char a) {
+	char ans = a & '_';
+	printf("%c\n", ans);
+}
+
+void invert_case(char a) {
+	char ans = a ^ ' ';
+	printf("%c\n", ans);
 }
