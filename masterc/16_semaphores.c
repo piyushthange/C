@@ -11,6 +11,7 @@ pthread_mutex_t mutex;
 
 void *routine() {
 //wait & post
+//correct semaphores
 	printf("Hello from thread %d\n", 
 
 }
