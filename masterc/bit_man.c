@@ -18,16 +18,16 @@ void off_bit(int x, int k);
 //Turn ON k'th bit in a number : x | 1 << (k - 1)
 void on_bit(int x, int k);
 
-//Check if k'th bit is set for a number
+//Check if k'th bit is set for a number : x & (1 << (k - 1))
 void check_bit(int x, int k);
 
-//Toggle the k'th bit
+//Toggle the k'th bit : x ^ (1 << (k-1))
 void toggle_bit(int x, int k);
 
-// Unset Rightmost bit of a number 
-void unset_rightmost_bit(int x);
+// Unset Rightmost bit of a number : x & (x-1)
+void unset_rightmost_bit(int x); 
 
-//Check if int is power of 2 without branching or loops
+//Check if int is power of 2 without branching or loops : res = x & (x -1) : 0 ? 1
 void pow_of_2(int x);
 
 //Find position of the rightmost set bit
